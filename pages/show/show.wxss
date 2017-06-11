@@ -1,0 +1,23 @@
+/* pages/show/show.wxss */
+
+.story-background {
+  background-size: cover;
+}
+
+.story-author {
+
+}
+
+.story-content {
+
+}
+
+.story-map {
+
+}
+
+.story-avatar {
+  border-radius:50%;
+  width:100px;
+  height:100px;
+}

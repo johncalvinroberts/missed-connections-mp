@@ -3,13 +3,28 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    userInfo: {},
+    markers: [{
+      iconPath: "/images/marker.png",
+      id: '593cfff1128fe1006ae41e77',
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 50,
+      height: 50
+    },
+      {
+        iconPath: "/images/marker.png",
+        id: '593cfff1128fe1006ae41e77',
+        latitude: 23.09898,
+        longitude: 113.324590,
+        width: 50,
+        height: 50
+      }]
   },
-  //事件处理函数
-  bindViewTap: function() {
+  markertap: function (e) {
+    console.log(e.markerId)
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '/pages/show/show?id=' + e.markerId
     })
   },
   onLoad: function () {
