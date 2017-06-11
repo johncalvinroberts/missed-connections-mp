@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/submit/submit",
     "pages/show/show"
   ],
   "window":{
@@ -8,5 +9,25 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "iMissed",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "#626262",
+    "borderStyle": "",
+    "selectedColor": "#fff",
+    "color": "#000",
+    "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "All missed connections",
+      "iconPath": "",
+      "selectedIconPath": ""
+    },
+    {
+      "pagePath": "pages/submit/submit",
+      "text": "Submit a missed connection",
+      "iconPath": "",
+      "selectedIconPath": ""
+    }
+    ]
   }
 }
