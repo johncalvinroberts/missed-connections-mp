@@ -5,15 +5,18 @@
     <text>Welcome to iMissed</text>
   </view>
   <view class="container-cards">
-    <view class="card">
-      <view bindtap="bindViewTap" class="userinfo">
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+
+    <block wx:for="{{ posts }}" wx:for-item="post" class="parent-view" wx:key="objectId">
+      <view class="card" bindtap="postBindTap" id="{{post.objectId}}" >
+        <view class="userinfo" id="{{post.objectId}}">
+          <image class="userinfo-avatar" src="{{post.avatarURL}}" background-size="cover" id="{{post.objectId}}"></image>
+          <text class="userinfo-nickname" id="{{post.objectId}}">{{ post.author }}</text>
+        </view>
+        <text class="post-body-text" id="{{post.objectId}}">{{ post.text }}</text>
+
+
       </view>
-      <view class="usermotto">
-        <text class="user-motto">You vomited against the side of a Christmas model train display. I helped you clean up. If you’re feeling better, I’d like to take you out for snacks.</text>
-      </view>
-    </view>
+    </block>
   </view>
    <view class="wrap-cta">
     <navigator url="/pages/submit/submit" class="submit-cta">+</navigator>
