@@ -11,23 +11,19 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "backgroundColor": "#626262",
-    "borderStyle": "",
+    "backgroundColor": "#F95959",
     "selectedColor": "#fff",
     "color": "#000",
     "list": [
     {
       "pagePath": "pages/index/index",
-      "text": "All missed connections",
-      "iconPath": "",
-      "selectedIconPath": ""
+      "text": "READ STORIES"
     },
     {
       "pagePath": "pages/submit/submit",
-      "text": "Submit a missed connection",
-      "iconPath": "",
-      "selectedIconPath": ""
+      "text": "SUBMIT STORY"
     }
-    ]
+    ],
+    "position": "top"
   }
 }
