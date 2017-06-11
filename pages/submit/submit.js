@@ -1,11 +1,16 @@
 // /pages/submit/submit.js
 var app = getApp();
+const AV = require('../../utils/av-weapp-min.js');
+//temporarily calling this object posts in the plural, because of leancloud
+class Posts extends AV.Object {
+}
+
 Page({
 
   data: {
     userInfo:{},
     location:{},
-    scale: 18
+    scale: 14
   },
   onLoad: function (options) {
     console.log('onLoad--submit page')
@@ -23,6 +28,19 @@ Page({
     var acl = new AV.ACL();
     acl.setPublicReadAccess(true);
     acl.setPublicWriteAccess(true);
+    setTimeout(function (){
+      new Posts({
+        latitude: that.data.location.latitude.toString(),
+        longitude: that.data.location.longitude.toString(),
+        author: that.data.userInfo.nickName,
+        avatarURL: that.data.userInfo.avatarUrl,
+        text: text,
+        upvotes: 0
+      }).setACL(acl).save().catch(console.error);
+      wx.reLaunch({
+        url: '/pages/index/index'
+      });
+    }, 200)
 
   },
 
