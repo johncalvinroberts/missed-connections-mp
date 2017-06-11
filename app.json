@@ -1,13 +1,13 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/submit/submit"
+    "pages/submit/submit",
+    "pages/show/show"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "iMissed",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
