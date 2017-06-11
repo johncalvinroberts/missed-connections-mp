@@ -1,10 +1,20 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+
+  <view class="wrap-welcome">
+    <text>Welcome to iMissed</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class="container-cards">
+    <view class="card">
+      <view bindtap="bindViewTap" class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+      <view class="usermotto">
+        <text class="user-motto">You vomited against the side of a Christmas model train display. I helped you clean up. If you’re feeling better, I’d like to take you out for snacks.</text>
+      </view>
+    </view>
   </view>
+
 </view>
