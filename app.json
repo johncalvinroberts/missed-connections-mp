@@ -21,8 +21,8 @@
       "text": "READ STORIES"
     },
     {
-      "pagePath": "pages/submit/submit",
-      "text": "SUBMIT STORY"
+      "pagePath": "pages/map/map",
+      "text": "AROUND YOU"
     }
     ],
     "position": "top"

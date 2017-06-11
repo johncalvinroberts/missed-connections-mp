@@ -4,8 +4,6 @@
   <view class="wrap-welcome">
     <text>Welcome to iMissed</text>
   </view>
-
-
   <view class="container-cards">
     <view class="card">
       <view bindtap="bindViewTap" class="userinfo">
@@ -17,6 +15,9 @@
       </view>
     </view>
   </view>
+   <view class="wrap-cta">
+    <navigator url="/pages/submit/submit" class="submit-cta">+</navigator>
+   </view>
 </view>
 
-<map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+<!--map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
