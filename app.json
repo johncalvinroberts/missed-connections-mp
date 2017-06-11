@@ -1,13 +1,30 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/submit/submit",
+    "pages/show/show"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "iMissed",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "#F95959",
+    "selectedColor": "#fff",
+    "color": "#000",
+    "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "READ STORIES"
+    },
+    {
+      "pagePath": "pages/submit/submit",
+      "text": "SUBMIT STORY"
+    }
+    ],
+    "position": "top"
   }
 }
