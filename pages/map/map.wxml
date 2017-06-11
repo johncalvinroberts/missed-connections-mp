@@ -1,0 +1,5 @@
+<view class="container"> 
+<map class="border" longitude="{{location.longitude}}" latitude="{{location.latitude}}" scale="{{location.scale}}" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}"></map>
+</view>
+
+
