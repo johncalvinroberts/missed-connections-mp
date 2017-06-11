@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/map/map",
     "pages/submit/submit",
     "pages/show/show"
   ],
