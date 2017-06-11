@@ -1,11 +1,16 @@
 // /pages/submit/submit.js
 var app = getApp();
+const AV = require('../../utils/av-weapp-min.js');
+//temporarily calling this object posts in the plural, because of leancloud
+class Posts extends AV.Object {
+}
+
 Page({
 
   data: {
     userInfo:{},
     location:{},
-    scale: 18
+    scale: 14
   },
   onLoad: function (options) {
     console.log('onLoad--submit page')
@@ -20,34 +25,49 @@ Page({
   bindPostSubmit: function(e){
     var that = this
     var text = e.detail.value.post_text
-    console.log(text)
+    var acl = new AV.ACL();
+    acl.setPublicReadAccess(true);
+    acl.setPublicWriteAccess(true);
+    setTimeout(function (){
+      new Posts({
+        latitude: that.data.location.latitude.toString(),
+        longitude: that.data.location.longitude.toString(),
+        author: that.data.userInfo.nickName,
+        avatarURL: that.data.userInfo.avatarUrl,
+        text: text,
+        upvotes: 0
+      }).setACL(acl).save().catch(console.error);
+      wx.reLaunch({
+        url: '/pages/index/index'
+      });
+    }, 200)
+
   },
 
   regionchange: function(e){
-    console.log(e.type)
+    var that = this
     if (e.type = 'end'){
-      var that = this
+      //change the missed connection location when map is moved
       this.mapCtx.getCenterLocation({
         success: function(res){
           that.data.location.latitude = res.latitude
           that.data.location.longitude = res.longitude
-        }
-      });
-
-      this.mapCtx.translateMarker({
-        markerId: 0,
-        autoRotate: false,
-        duration: 100,
-        destination: {
-          latitude: that.data.location.latitude,
-          longitude: that.data.location.longitude,
-        },
-        animationEnd() {
-          console.log('animation end')
+          //update marker to show the location
+          that.mapCtx.translateMarker({
+            markerId: 0,
+            autoRotate: false,
+            duration: 500,
+            destination: {
+              latitude: res.latitude,
+              longitude: res.longitude
+            },
+            animationEnd() {
+              // console.log('animation end')
+            }
+          })
         }
       })
     }
-
   },
   onShow: function () {
     var that = this
@@ -61,7 +81,7 @@ Page({
         console.log(latitude)
         console.log(longitude)
 
-        // updating the map location and the marker
+        // set map to display users current location as default
         that.setData({
           location: { latitude: latitude, longitude: longitude },
           scale: '14',

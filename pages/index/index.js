@@ -1,25 +1,16 @@
 //index.js
 //获取应用实例
 var app = getApp()
+var app = getApp();
+const AV = require('../../utils/av-weapp-min.js');
+//temporarily calling this object posts in the plural, because of leancloud
+class Posts extends AV.Object {
+}
+
 Page({
   data: {
     userInfo: {},
-    markers: [{
-      iconPath: "/images/marker.png",
-      id: '593cfff1128fe1006ae41e77',
-      latitude: 23.099994,
-      longitude: 113.324520,
-      width: 50,
-      height: 50
-    },
-      {
-        iconPath: "/images/marker.png",
-        id: '593cfff1128fe1006ae41e77',
-        latitude: 23.09898,
-        longitude: 113.324590,
-        width: 50,
-        height: 50
-      }]
+    posts:{}
   },
   markertap: function (e) {
     console.log(e.markerId)
@@ -30,15 +21,21 @@ Page({
   onLoad: function () {
     console.log('onLoad')
     var that = this
-    //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
-      //更新数据
       that.setData({
         userInfo:userInfo
       })
     })
+    new AV.Query('Posts')
+      .descending('createdAt')
+      .find()
+      .then(posts => this.setData({ posts }))
+      .catch(console.error);
   },
-  
-
+  postBindTap: function(e){
+    wx.redirectTo({
+      url:'../show/show?id=' + e.target.id
+    })
+  }
 
 })
