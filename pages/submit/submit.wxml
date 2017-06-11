@@ -1,2 +1,9 @@
 <!--/pages/submit/submit.wxml-->
-<text>/pages/submit/submit.wxml</text>
+<text>Submit your missed connection</text>
+<map id="submitMap" longitude="{{location.longitude}}" latitude="{{location.latitude}}" scale="{{scale}}" markers="{{markers}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+<form bindsubmit="bindPostSubmit">
+  <view class="text-area-wrp">
+    <textarea class="input-height" name="post_text" maxlength="-1" />
+    </view>
+  <button type="primary" form-type="submit">Submit</button>
+</form>
