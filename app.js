@@ -1,4 +1,9 @@
 //app.js
+AV.init({
+  appId: 'ccuhqExYyqmmkeU1zNN6OJJ9-gzGzoHsz',
+  appKey: 'NkVtd61Kwqs2WBFFtzqHc86S',
+});
+
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
