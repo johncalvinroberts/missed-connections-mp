@@ -69,9 +69,6 @@ Page({
       })
     }
   },
-  mapTap: function(e){
-    console.log(e)
-  },
   onShow: function () {
     var that = this
     wx.getLocation({
