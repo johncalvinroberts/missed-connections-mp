@@ -6,11 +6,11 @@ class Posts extends AV.Object {
 }
 
 Page({
-
   data: {
     userInfo:{},
     location:{},
-    scale: 14
+    scale: 14,
+    loading: false
   },
   onLoad: function (options) {
     console.log('onLoad--submit page')
@@ -23,6 +23,14 @@ Page({
     console.log(that.data.userInfo)
   },
   bindPostSubmit: function(e){
+    this.setData({
+      loading: !this.data.loading
+    })
+    wx.showToast({
+      title: 'Sending...',
+      icon: 'loading',
+      duration: 1500
+    })
     var that = this
     var text = e.detail.value.post_text
     var acl = new AV.ACL();
@@ -38,7 +46,7 @@ Page({
         upvotes: 0
       }).setACL(acl).save().catch(console.error);
       wx.reLaunch({
-        url: '/pages/index/index'
+        url: '/pages/index/index?post=1'
       });
     }, 200)
 
