@@ -19,7 +19,7 @@
     </block>
   </view>
    <view class="wrap-cta">
-    <navigator url="/pages/submit/submit" class="submit-cta">+</navigator>
+    <navigator url="/pages/submit/submit" class="submit-cta"><span class="plus-sign"></span></navigator>
    </view>
 </view>
 

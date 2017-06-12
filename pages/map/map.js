@@ -19,10 +19,10 @@ Page({
             latitude: latitude,
             longitude: longitude,
             scale: "12",
-          }  
+          }
         })
       }
-    })  
+    })
    // 2. fetch all available posts
     new AV.Query('Posts')
       .find()
@@ -37,7 +37,7 @@ Page({
             // 3. get the latitude/longitudes and set markers
             var lat = e.attributes.latitude;
             var lg = e.attributes.longitude;
-            
+
             var marker = {
               iconPath: "/images/marker.png",
               latitude: lat,
@@ -53,6 +53,6 @@ Page({
         }
       )
       .catch(console.error);
-    },      
+    },
 })
-    
+

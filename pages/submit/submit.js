@@ -42,6 +42,7 @@ Page({
         longitude: that.data.location.longitude.toString(),
         author: that.data.userInfo.nickName,
         avatarURL: that.data.userInfo.avatarUrl,
+        gender: that.data.userInfo.gender,
         text: text,
         upvotes: 0
       }).setACL(acl).save().catch(console.error);

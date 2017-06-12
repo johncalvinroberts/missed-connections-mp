@@ -15,9 +15,24 @@
 .story-map {
 
 }
+.card{
+  height: 200px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
 
 .story-avatar {
   border-radius:50%;
   width:100px;
   height:100px;
+}
+.back-to-index{
+  padding: 20rpx;
+}
+
+.post-time{
+   color: #aaa;
+  font-size:14px;
+  margin-left:20rpx;
+
 }

@@ -1,11 +1,15 @@
 <!--pages/show/show.wxml-->
+<navigator url="/pages/index/index" open-type="switchTab" class="back-to-index">Back</navigator>
 <view class="container story-background">
-  <view class="story-author">
-    <view>{{post.author}}</view>
-    <image src="{{post.avatarUrl}}" class="story-avatar avatar"></image>
+
+  <view class="card" bindtap="postBindTap" id="{{post.objectId}}" >
+    <view class="userinfo" id="{{post.objectId}}">
+      <image class="userinfo-avatar" src="{{post.avatarURL}}" background-size="cover" id="{{post.objectId}}"></image>
+      <text class="userinfo-nickname" id="{{post.objectId}}">{{ post.author }}</text>
+      <text class="post-time">{{ post.createdAt }}</text>
+    </view>
+    <text class="post-body-text" id="{{post.objectId}}">{{ post.text }}</text>
   </view>
-  <view class="story-content">
-    <view>{{post.text}}</view>
-  </view>
+
   <map id="map" longitude="{{post.longitude}}" latitude="{{post.latitude}}" scale="15" markers="{{marker}}" show-location style="width: 100%; height: 300px;"></map>
 </view>
