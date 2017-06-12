@@ -37,13 +37,19 @@ Page({
             // 3. get the latitude/longitudes and set markers
             var lat = e.attributes.latitude;
             var lg = e.attributes.longitude;
-
             var marker = {
-              iconPath: "/images/marker.png",
               latitude: lat,
               longitude: lg,
               width: 50,
               height: 50,
+            }
+            //assign a marker image based on gender
+            if(e.attributes.gender == 1){
+              marker.iconPath = "/images/marker-male.png"
+            } else if (e.attributes.gender == 0){
+              marker.iconPath = "/images/marker-female.png"
+            } else{
+              marker.iconPath = "/images/marker.png"
             }
             markers.push(marker);
           })
