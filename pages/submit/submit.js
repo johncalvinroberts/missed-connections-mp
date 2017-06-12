@@ -10,7 +10,8 @@ Page({
   data: {
     userInfo:{},
     location:{},
-    scale: 14
+    scale: 14,
+    loading: false
   },
   onLoad: function (options) {
     console.log('onLoad--submit page')
@@ -23,6 +24,14 @@ Page({
     console.log(that.data.userInfo)
   },
   bindPostSubmit: function(e){
+    this.setData({
+      loading: !this.data.loading
+    })
+    wx.showToast({
+      title: 'Sending...',
+      icon: 'loading',
+      duration: 2000
+    })
     var that = this
     var text = e.detail.value.post_text
     var acl = new AV.ACL();
