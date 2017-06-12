@@ -18,7 +18,14 @@ Page({
       url: '/pages/show/show?id=' + e.markerId
     })
   },
-  onLoad: function () {
+  onLoad: function (option) {
+    if (option.post == 1) {
+      wx.showToast({
+        title: 'Added. Thanks!',
+        icon: 'success',
+        duration: 4000
+      });
+    }
     console.log('onLoad')
     var that = this
     app.getUserInfo(function(userInfo){
@@ -37,5 +44,6 @@ Page({
       url:'../show/show?id=' + e.target.id
     })
   }
+
 
 })

@@ -6,7 +6,6 @@ class Posts extends AV.Object {
 }
 
 Page({
-
   data: {
     userInfo:{},
     location:{},
@@ -30,7 +29,7 @@ Page({
     wx.showToast({
       title: 'Sending...',
       icon: 'loading',
-      duration: 2000
+      duration: 1500
     })
     var that = this
     var text = e.detail.value.post_text
@@ -47,7 +46,7 @@ Page({
         upvotes: 0
       }).setACL(acl).save().catch(console.error);
       wx.reLaunch({
-        url: '/pages/index/index'
+        url: '/pages/index/index?post=1'
       });
     }, 200)
 

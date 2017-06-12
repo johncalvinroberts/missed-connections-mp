@@ -9,9 +9,8 @@
   background-color: #F4F4F4;
 } 
 .wrap {
-  margin: 0px 20px;
-  text-align: left;
   padding:40rpx;
+  text-align: left;
 }
 /* form style */
 .user-input {
@@ -23,7 +22,6 @@
 textarea {
   padding: 10rpx 0;
   font-size: 35rpx;
-  color: red;
 }
 .text-area-wrp {
   padding: 15rpx 15rpx;
