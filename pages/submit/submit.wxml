@@ -1,14 +1,15 @@
 <view class="header">
- <view class="h2-header">Submit your missed connection</view>
+ <text class="h2-header">Tell us what happened</text>
 </view>
 <map id="submitMap" longitude="{{location.longitude}}" latitude="{{location.latitude}}" scale="{{scale}}" markers="{{markers}}" bindregionchange="regionchange"  show-location style="width: 100%; height: 250px;"></map>
-<view class="container">
+<view class="container-form">
  <view class="wrap">
+  <text class="caption">Mark the location where it happened</text>
+
   <form bindsubmit="bindPostSubmit">
    <view class="user-input">
-    <view class="desc">Share your missed connection story</view>
     <view class="text-area-wrp">
-     <textarea class="input-height" name="post_text" maxlength="-1" placeholder="It is where it starts..."/>
+     <textarea class="input-height" name="post_text" maxlength="-1" placeholder="Last night as I was shopping at..."/>
     </view>
    </view>
    <button type="primary" form-type="submit" loading="{{loading}}">Submit</button>
