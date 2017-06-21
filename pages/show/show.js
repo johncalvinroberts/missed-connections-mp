@@ -1,18 +1,11 @@
 // pages/show/show.js
 const AV = require('../../utils/av-weapp-min.js');
-
+var util = require('../../utils/util.js')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    postId: null
+    postId: null,
+    dateP:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (option) {
       var which = option.id
       console.log(which)
@@ -26,10 +19,16 @@ Page({
         function (post) {
           var latitude = post.attributes.latitude
           var longitude = post.attributes.longitude
-          // console.log(post)
+          var date = post.createdAt
+          console.log(date)
+          var format = util.formatTime(new Date(date))
+          console.log(format)
+          
           that.setData({
-            post: post
+            post: post,
+            dateP: format,
           })
+
           var thisMarker = '';
           if(post.attributes.gender == 1){
             thisMarker = "/images/marker-male.png"
@@ -38,7 +37,6 @@ Page({
           } else{
             thisMarker = "/images/marker.png"
           }
-
           that.setData({
             marker: [{
               iconPath:thisMarker,
@@ -58,9 +56,8 @@ Page({
               }
             }]
           })
-        }
-        )
-        .catch(console.error);
+        },
+       ).catch(console.error);
   },
   onShareAppMessage: function () {
     console.log('share')
@@ -68,4 +65,17 @@ Page({
       withShareTicket: true
     })
   },
+  // Loading spinner when page load
+  onload: function () {
+    wx.showNavigationBarLoading()
+  },
+  // Change naviagtion bar title
+  onShow: function () {
+    wx.setNavigationBarTitle({
+      title: 'iMissed story',
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  }
 })

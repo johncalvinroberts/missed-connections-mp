@@ -43,7 +43,11 @@ Page({
     wx.navigateTo({
       url:'../show/show?id=' + e.target.id
     })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: 'iMissed Connection',
+      path: 'pages/index/index'
+    }
   }
-
-
 })

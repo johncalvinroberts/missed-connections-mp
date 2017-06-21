@@ -5,7 +5,7 @@
     <image class="userinfo-avatar" src="{{post.avatarURL}}" background-size="cover" id="{{post.objectId}}"></image>
     <view class="userinfo-nickname" id="{{post.objectId}}">   
      <text>@ {{ post.author }}</text>
-     <view class="post-time">{{post.createdAt}}</view>
+     <view class="post-time">{{dateP}}</view>
     </view>
    </view>
    <view class="wrap">
