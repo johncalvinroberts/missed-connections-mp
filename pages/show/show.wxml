@@ -20,7 +20,7 @@
 <view class="wrap">
  <map id="map" class="border" longitude="{{post.longitude}}" latitude="{{post.latitude}}" scale="15" markers="{{marker}}" show-location></map>
  <view bindtap="onShareAppMessage">
-  <button class="share-btn" open-type="share" type="primary">Share</button>
+  <button class="share-btn" open-type="share" type="primary">Share to your friends</button>
  </view>
 </view>
 

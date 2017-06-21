@@ -102,7 +102,15 @@ Page({
             width: 50,
             height: 50,
             title: "",
-            callout: { content: "Missed connection point", fontSize: 15, color: "#000000", display: "ALWAYS", padding: 10 }
+            callout: {
+              content: "iMissed location",
+              fontSize: 13,
+              borderRadius: 5,
+              bgColor: "#F95959",
+              color: "#FFF",
+              display: "ALWAYS",
+              padding: 10
+            }
           }]
         })
       },
