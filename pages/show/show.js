@@ -38,7 +38,6 @@ Page({
           } else{
             thisMarker = "/images/marker.png"
           }
-
           that.setData({
             marker: [{
               iconPath:thisMarker,
@@ -68,4 +67,17 @@ Page({
       withShareTicket: true
     })
   },
+  // Loading spinner when page load
+  onload: function () {
+    wx.showNavigationBarLoading()
+  },
+  // Change naviagtion bar title
+  onShow: function () {
+    wx.setNavigationBarTitle({
+      title: 'iMissed story',
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  }
 })

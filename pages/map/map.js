@@ -60,5 +60,11 @@ Page({
       )
       .catch(console.error);
     },
+  onShareAppMessage: function () {
+    return {
+      title: 'iMissed around you',
+      path: 'pages/map/map'
+    }
+  }
 })
 
