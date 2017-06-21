@@ -1,15 +1,26 @@
-<!--pages/show/show.wxml-->
-<navigator url="/pages/index/index" open-type="switchTab" class="back-to-index">Back</navigator>
 <view class="container story-background">
-
-  <view class="card" bindtap="postBindTap" id="{{post.objectId}}" >
-    <view class="userinfo" id="{{post.objectId}}">
-      <image class="userinfo-avatar" src="{{post.avatarURL}}" background-size="cover" id="{{post.objectId}}"></image>
-      <text class="userinfo-nickname" id="{{post.objectId}}">{{ post.author }}</text>
-      <text class="post-time">{{ post.createdAt }}</text>
+ <view bindtap="postBindTap" id="{{post.objectId}}" >
+  <view id="{{post.objectId}}">
+   <view class="header">
+    <image class="userinfo-avatar" src="{{post.avatarURL}}" background-size="cover" id="{{post.objectId}}"></image>
+    <view class="userinfo-nickname" id="{{post.objectId}}">   
+     <text>@ {{ post.author }}</text>
+     <view class="post-time">{{dateP}}</view>
     </view>
-    <text class="post-body-text" id="{{post.objectId}}">{{ post.text }}</text>
+   </view>
+   <view class="wrap">
+    <view class="h2-flash">
+     <text>iMissed Story</text>
+    </view>
+    <text class="desc" id="{{post.objectId}}">{{ post.text }}</text>  
+   </view>
   </view>
-
-  <map id="map" longitude="{{post.longitude}}" latitude="{{post.latitude}}" scale="15" markers="{{marker}}" show-location style="width: 100%; height: 300px;"></map>
+ </view>
 </view>
+<view class="wrap">
+ <map id="map" class="border" longitude="{{post.longitude}}" latitude="{{post.latitude}}" scale="15" markers="{{marker}}" show-location></map>
+ <view bindtap="onShareAppMessage">
+  <button class="share-btn" open-type="share" type="primary">Share to your friends</button>
+ </view>
+</view>
+

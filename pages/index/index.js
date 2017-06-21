@@ -40,10 +40,14 @@ Page({
       .catch(console.error);
   },
   postBindTap: function(e){
-    wx.redirectTo({
+    wx.navigateTo({
       url:'../show/show?id=' + e.target.id
     })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: 'iMissed Connection',
+      path: 'pages/index/index'
+    }
   }
-
-
 })

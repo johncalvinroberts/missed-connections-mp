@@ -102,7 +102,15 @@ Page({
             width: 50,
             height: 50,
             title: "",
-            callout: { content: "Missed connection point", fontSize: 15, color: "#000000", display: "ALWAYS", padding: 10 }
+            callout: {
+              content: "iMissed location",
+              fontSize: 13,
+              borderRadius: 5,
+              bgColor: "#F95959",
+              color: "#FFF",
+              display: "ALWAYS",
+              padding: 10
+            }
           }]
         })
       },
@@ -111,42 +119,26 @@ Page({
       }
     })
   },
-
   onReady: function () {
     this.mapCtx = wx.createMapContext('submitMap')
   },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  // Loading spinner when page load
+  onload: function () {
+    wx.showNavigationBarLoading()
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  // Change naviagtion bar title
+  onShow: function () {
+    wx.setNavigationBarTitle({
+      title: 'Submit your story',
+      success: function (res) {
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
-
+    return {
+      title: 'Submit your iMissed story',
+      path: 'pages/submit/submit'
+    }
   }
 })

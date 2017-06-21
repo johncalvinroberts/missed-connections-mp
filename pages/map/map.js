@@ -64,6 +64,12 @@ Page({
    wx.navigateTo({
     url: '/pages/show/show?id=' + e.markerId
    })
- }
+ },
+ onShareAppMessage: function () {
+    return {
+      title: 'iMissed around you',
+      path: 'pages/map/map'
+    }
+  }
 })
 

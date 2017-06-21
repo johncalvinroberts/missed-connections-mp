@@ -1,15 +1,13 @@
 /**app.wxss**/
+page {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F4F4F4;
+}
 .container {
   height: 100%;
   box-sizing: border-box;
   margin: 0 0;
-  background-color: #F4F4F4;
 }
-
-page {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .header {
   display:flex;
   align-items: center;
@@ -20,11 +18,9 @@ page {
   font-weight:700;
   border-bottom: 0.2px solid white;
 }
-
 .wrap-cta {
   position: absolute;
 }
-
 .submit-cta {
   background-color: #F65A5D;
   color: white;
@@ -40,9 +36,7 @@ page {
   position: fixed;
   right: 40rpx;
   bottom: 40rpx;
-  vertical-align: center;
 }
-
 .plus-sign {
   background-color: #fff;
   width: 40rpx;
@@ -53,4 +47,15 @@ page {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.h2-flash {
+  font-size: 18px; 
+  color:#F95959;
+  font-weight:700;
+  margin-bottom: 20rpx;
+}
+.desc{
+  font-size: 15px;
+  color: #2C2C2C;
 }

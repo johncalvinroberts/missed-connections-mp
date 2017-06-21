@@ -12,7 +12,9 @@
   font-weight: 700;
   font-size: 23px;
 }
-
+.wrap-welcome text {
+   box-shadow:inset 0px -10px rgba(170, 170, 170, 0.7);
+}
 .container-cards {
   height: 100%;
   padding: 40rpx;

@@ -1,18 +1,11 @@
 // pages/show/show.js
 const AV = require('../../utils/av-weapp-min.js');
-
+var util = require('../../utils/util.js')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    postId: null
+    postId: null,
+    dateP:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (option) {
       var which = option.id
       console.log(which)
@@ -26,9 +19,14 @@ Page({
         function (post) {
           var latitude = post.attributes.latitude
           var longitude = post.attributes.longitude
-          // console.log(post)
+          var date = post.createdAt
+          console.log(date)
+          var format = util.formatTime(new Date(date))
+          console.log(format)
+          
           that.setData({
-            post: post
+            post: post,
+            dateP: format,
           })
 
           var thisMarker = '';
@@ -39,7 +37,6 @@ Page({
           } else{
             thisMarker = "/images/marker.png"
           }
-
           that.setData({
             marker: [{
               iconPath:thisMarker,
@@ -47,60 +44,38 @@ Page({
               latitude: latitude,
               longitude: longitude,
               width: 50,
-              height: 50
+              height: 50,
+              callout: {
+                content: "iMissed point",
+                fontSize: 13,
+                borderRadius: 5,
+                bgColor: "#F95959",
+                color: "#FFF",
+                display: "ALWAYS",
+                padding: 10
+              }
             }]
           })
-        }
-        )
-        .catch(console.error);
+        },
+       ).catch(console.error);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    console.log(this.data.post)
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
-
+    console.log('share')
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
+  // Loading spinner when page load
+  onload: function () {
+    wx.showNavigationBarLoading()
+  },
+  // Change naviagtion bar title
+  onShow: function () {
+    wx.setNavigationBarTitle({
+      title: 'iMissed story',
+      success: function (res) {
+        console.log(res)
+      }
+    })
   }
 })
