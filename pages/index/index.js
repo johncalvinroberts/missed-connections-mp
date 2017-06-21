@@ -40,7 +40,7 @@ Page({
       .catch(console.error);
   },
   postBindTap: function(e){
-    wx.redirectTo({
+    wx.navigateTo({
       url:'../show/show?id=' + e.target.id
     })
   }
