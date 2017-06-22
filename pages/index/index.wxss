@@ -1,4 +1,6 @@
 /**index.wxss**/
+
+/* header */
 .wrap-welcome {
   width: 100%;
   height: 250rpx;
@@ -15,12 +17,12 @@
 .wrap-welcome text {
    box-shadow:inset 0px -10px rgba(170, 170, 170, 0.7);
 }
+/* Cards */
 .container-cards {
   height: 100%;
   padding: 40rpx;
   display: block;
 }
-
 .card {
   background-color: white;
   border-radius: 8rpx;
@@ -30,30 +32,88 @@
   box-shadow: 0 1px 23px -5px rgba(10, 10, 10, .3);
   
 }
-
 .post-body-text {
   color: #2C2C2C;
   font-size: 15px;
   line-height: 1em;
 }
-
 .userinfo {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10rpx 0rpx 20rpx;
 }
-
 .userinfo-avatar {
   width: 65rpx;
   height: 65rpx;
   /*margin: 20rpx;*/
   border-radius: 50%;
 }
-
 .userinfo-nickname {
   color: #6D6D6D;
   font-size: 12px;
   margin-left: 20rpx;
   letter-spacing: 2rpx;
 }
+/* Btn */
+.spinner {
+  background: #F65A5D;
+  color: white;
+  padding: 20rpx 20rpx;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  font-weight: bolder;
+  font-size:39px;
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  border: 4px solid transparent;
+  display: inline-block;
+}
+.spinner::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.spinner::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.spinner-1:after {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  border: 3px solid transparent;
+  border-top-color: #AAAAAA;
+  border-bottom-color: #AAAAAA;
+  animation: spinny 1.5s linear infinite;
+}
+@keyframes spinny {
+  0% { 
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+     transform: rotate(45deg) scale(1.2);
+  }
+  100% {
+     transform: rotate(360deg) scale(1);
+  }
+}
+.plus-sign {
+  background-color: #fff;
+  width: 44rpx;
+  height: 44rpx;
+  display: block;
+  background: linear-gradient(to bottom, transparent 35%, #fff 35%, #fff 65%,  transparent 65%), linear-gradient(to right, transparent 35%, #fff 35%, #fff 65%, transparent 65%);
+  margin:0 0 0 18px;
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
