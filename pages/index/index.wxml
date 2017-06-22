@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-
   <view class="wrap-welcome">
     <text>Welcome to iMissed</text>
   </view>
@@ -15,8 +14,14 @@
         <text class="post-body-text" id="{{post.objectId}}">{{ post.text }}</text>
       </view>
     </block>
+
+  
+       <navigator class="spinner spinner-1" url="/pages/submit/submit"><span class="plus-sign"></span></navigator>
+   
+
+
   </view>
-  <navigator url="/pages/submit/submit" class="submit-cta"><span class="plus-sign"></span></navigator>
+ 
 </view>
 
 <!--map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>

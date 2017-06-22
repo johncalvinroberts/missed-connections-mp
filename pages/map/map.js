@@ -13,7 +13,7 @@ Page({
     success: function (res) {
       var latitude = res.latitude
       var longitude = res.longitude
-      console.log(res) 
+      console.log(res)
       that.setData({
         location: {
          latitude: latitude,
@@ -33,12 +33,12 @@ Page({
      var markers = []
      // Loop through posts and build markers
      posts.forEach(function (e) {
-     // 3. get the latitude, longitudes and set markers  
+     // 3. get the latitude, longitudes and set markers
        var id = e.id;
        var lat = e.attributes.latitude;
        var lg = e.attributes.longitude;
        var marker = {
-         id: id, 
+         id: id,
          latitude: lat,
          longitude: lg,
          width: 50,

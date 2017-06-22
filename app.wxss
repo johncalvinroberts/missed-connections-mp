@@ -18,37 +18,6 @@ page {
   font-weight:700;
   border-bottom: 0.2px solid white;
 }
-.wrap-cta {
-  position: absolute;
-}
-.submit-cta {
-  background-color: #F65A5D;
-  color: white;
-  padding: 20rpx 20rpx;
-  margin-top:12px;
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  vertical-align: center;
-  font-weight: bolder;
-  font-size:39px;
-  position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
-}
-.plus-sign {
-  background-color: #fff;
-  width: 40rpx;
-  height: 40rpx;
-  display: block;
-  background: linear-gradient(to bottom, transparent 35%, #fff 35%, #fff 65%,  transparent 65%), linear-gradient(to right, transparent 35%, #fff 35%, #fff 65%, transparent 65%);
-  margin: 0 auto;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .h2-flash {
   font-size: 18px; 
   color:#F95959;

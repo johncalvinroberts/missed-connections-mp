@@ -1,4 +1,4 @@
-<view class="container"> 
+<view class="container">
 <map id="map" class="border" longitude="{{location.longitude}}" latitude="{{location.latitude}}" scale="{{location.scale}}" markers="{{markers}}" bindmarkertap="markertap"  show-location></map>
 </view>
 
