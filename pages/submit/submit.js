@@ -37,7 +37,9 @@ Page({
     acl.setPublicReadAccess(true);
     acl.setPublicWriteAccess(true);
     setTimeout(function (){
+      console.log(that.data.location.latitude),
       new Posts({
+    
         latitude: that.data.location.latitude.toString(),
         longitude: that.data.location.longitude.toString(),
         author: that.data.userInfo.nickName,
@@ -50,9 +52,7 @@ Page({
         url: '/pages/index/index?post=1'
       });
     }, 200)
-
   },
-
   regionchange: function(e){
     var that = this
     if (e.type = 'end'){
@@ -78,8 +78,18 @@ Page({
       })
     }
   },
+  onReady: function () {
+    this.mapCtx = wx.createMapContext('submitMap')
+  },
+  // Change naviagtion bar title
   onShow: function () {
     var that = this
+    wx.setNavigationBarTitle({
+      title: 'Submit your story',
+      success: function (res) {
+        console.log(res)
+      }
+    })
     wx.getLocation({
       // API to locate user
       type: 'wgs84',
@@ -89,48 +99,31 @@ Page({
         var longitude = res.longitude
         console.log(latitude)
         console.log(longitude)
-
-        // set map to display users current location as default
-        that.setData({
-          location: { latitude: latitude, longitude: longitude },
-          scale: '14',
-          markers: [{
-            iconPath: "../../images/marker.png",
-            id: 0,
-            latitude: latitude,
-            longitude: longitude,
-            width: 50,
-            height: 50,
-            title: "",
-            callout: {
-              content: "iMissed location",
-              fontSize: 13,
-              borderRadius: 5,
-              bgColor: "#F95959",
-              color: "#FFF",
-              display: "ALWAYS",
-              padding: 10
-            }
-          }]
-        })
+          // set map to display users current location as default
+          that.setData({
+            location: { latitude: latitude, longitude: longitude },
+            scale: '14',
+            markers: [{
+              iconPath: "../../images/marker.png",
+              id: 0,
+              latitude: latitude,
+              longitude: longitude,
+              width: 50,
+              height: 50,
+              title: "",
+              callout: {
+                content: "iMissed location",
+                fontSize: 13,
+                borderRadius: 5,
+                bgColor: "#F95959",
+                color: "#FFF",
+                display: "ALWAYS",
+                padding: 10
+              }
+            }]
+          })
       },
-      fail: function(res) {
-        console.log(res)
-      }
-    })
-  },
-  onReady: function () {
-    this.mapCtx = wx.createMapContext('submitMap')
-  },
-  // Loading spinner when page load
-  onload: function () {
-    wx.showNavigationBarLoading()
-  },
-  // Change naviagtion bar title
-  onShow: function () {
-    wx.setNavigationBarTitle({
-      title: 'Submit your story',
-      success: function (res) {
+      fail: function (res) {
         console.log(res)
       }
     })
