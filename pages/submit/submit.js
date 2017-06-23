@@ -104,11 +104,11 @@ Page({
             location: { latitude: latitude, longitude: longitude },
             scale: '14',
             markers: [{
-              iconPath: "../../images/marker.png",
+              iconPath: "../../images/female-marker.png",
               id: 0,
               latitude: latitude,
               longitude: longitude,
-              width: 50,
+              width: 35,
               height: 50,
               title: "",
               callout: {

@@ -11,7 +11,7 @@
           <image class="userinfo-avatar" src="{{post.avatarURL}}" background-size="cover" id="{{post.objectId}}"></image>
           <text class="userinfo-nickname" id="{{post.objectId}}">{{ post.author }}</text>
         </view>
-        <text class="post-body-text" id="{{post.objectId}}">{{ post.text }}</text>
+        <text class="desc" id="{{post.objectId}}">{{ post.text }}</text>
       </view>
     </block>
 

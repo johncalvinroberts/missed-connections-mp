@@ -24,18 +24,13 @@
   display: block;
 }
 .card {
-  background-color: white;
-  border-radius: 8rpx;
+  background-color: #fff;
+  border-radius: 4rpx;
+ border-left: 6px solid #F65A5D;
   margin-bottom: 20rpx;
   /*border-top: solid 1rpx red;*/
   padding: 20rpx;
-  box-shadow: 0 1px 23px -5px rgba(10, 10, 10, .3);
-  
-}
-.post-body-text {
-  color: #2C2C2C;
-  font-size: 15px;
-  line-height: 1em;
+  box-shadow: 0 1px 23px -5px rgba(10, 10, 10, .3); 
 }
 .userinfo {
   display: flex;
@@ -44,13 +39,14 @@
   padding: 10rpx 0rpx 20rpx;
 }
 .userinfo-avatar {
+  border: 2px solid #F65A5D;
   width: 65rpx;
   height: 65rpx;
   /*margin: 20rpx;*/
   border-radius: 50%;
 }
 .userinfo-nickname {
-  color: #6D6D6D;
+  color: #F65A5D;
   font-size: 12px;
   margin-left: 20rpx;
   letter-spacing: 2rpx;
