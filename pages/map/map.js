@@ -41,16 +41,17 @@ Page({
          id: id,
          latitude: lat,
          longitude: lg,
-         width: 50,
+         width: 35,
          height: 50,
        }
+
        // Assign a marker image based on gender
        if(e.attributes.gender == 1){
-         marker.iconPath = "/images/marker-male.png"
+         marker.iconPath = "/images/male-marker.png"
        } else if (e.attributes.gender == 0){
-          marker.iconPath = "/images/marker-female.png"
+         marker.iconPath = "/images/female-marker.png"
        } else{
-          marker.iconPath = "/images/marker.png"
+          marker.iconPath = "/images/female-marker.png"
        }
        markers.push(marker);
      })

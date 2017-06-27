@@ -25,6 +25,7 @@ page {
   margin-bottom: 20rpx;
 }
 .desc{
+  color: #353B42;
   font-size: 15px;
-  color: #2C2C2C;
+  line-height: 1em;
 }

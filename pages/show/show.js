@@ -31,11 +31,11 @@ Page({
 
           var thisMarker = '';
           if(post.attributes.gender == 1){
-            thisMarker = "/images/marker-male.png"
+            thisMarker = "/images/male-marker.png"
           } else if (post.gender == 0){
-            thisMarker = "/images/marker-female.png"
+            thisMarker = "/images/female-marker.png"
           } else{
-            thisMarker = "/images/marker.png"
+            thisMarker = "/images/female-marker.png"
           }
           that.setData({
             marker: [{
@@ -43,7 +43,7 @@ Page({
               id: post.objectId,
               latitude: latitude,
               longitude: longitude,
-              width: 50,
+              width: 35,
               height: 50,
               callout: {
                 content: "iMissed point",

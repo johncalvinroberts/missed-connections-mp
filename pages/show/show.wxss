@@ -41,14 +41,14 @@
   display: block;
   text-align:center;
 }
-map.border {
+.border {
   border:5px solid #aaa;
   width: 97%;
   height:240px;
 }
+
 .share-btn {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 
