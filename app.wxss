@@ -1,7 +1,7 @@
 /**app.wxss**/
 page {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #F4F4F4;
+  background-color: #F9F7F1;
 }
 .container {
   height: 100%;
@@ -13,14 +13,14 @@ page {
   align-items: center;
   justify-content: center;
   height: 100px;
-  background-color:#F95959;
-  color: white;
+  background-color: #2f2f2f;
+  color: #F9F7F1;
   font-weight:700;
   border-bottom: 0.2px solid white;
 }
 .h2-flash {
-  font-size: 18px; 
-  color:#F95959;
+  font-size: 18px;
+  color:#000;
   font-weight:700;
   margin-bottom: 20rpx;
 }

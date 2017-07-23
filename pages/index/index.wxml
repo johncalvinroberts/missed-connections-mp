@@ -1,10 +1,12 @@
 <!--index.wxml-->
 <view class="container">
   <view class="wrap-welcome">
-    <text>Welcome to iMissed</text>
+    <text class="wrap--header">Missed Connections</text>
+    <text class="wrap--subheader">Your favorite personals section--now on WeChat</text>
   </view>
 
   <view class="container-cards">
+    <view class="card-container-wingding"></view>
     <block wx:for="{{ posts }}" wx:for-item="post" class="parent-view" wx:key="objectId">
       <view class="card" bindtap="postBindTap" id="{{post.objectId}}" >
         <view class="userinfo" id="{{post.objectId}}">
@@ -15,13 +17,13 @@
       </view>
     </block>
 
-  
+
        <navigator class="spinner spinner-1" url="/pages/submit/submit"><span class="plus-sign"></span></navigator>
-   
+
 
 
   </view>
- 
+
 </view>
 
 <!--map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>

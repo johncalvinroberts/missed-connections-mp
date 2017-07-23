@@ -7,15 +7,15 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#aaa",
-    "navigationBarTitleText": "iMissed",
-    "navigationBarTextStyle":"white"
+    "navigationBarBackgroundColor": "#2f2f2f",
+    "navigationBarTitleText": "misd.connexions",
+    "navigationBarTextStyle":"#F9F7F1"
   },
   "tabBar": {
-    "backgroundColor": "#F95959",
-    "borderStyle": "white",
-    "selectedColor": "#fff",
-    "color": "#fff",
+    "backgroundColor": "#F9F7F1",
+    "borderStyle": "#2f2f2f",
+    "selectedColor": "#2f2f2f",
+    "color": "#8F8D8D",
     "list": [
     {
       "pagePath": "pages/index/index",
